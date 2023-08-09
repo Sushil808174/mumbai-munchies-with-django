@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Read Data</title>
+    <link rel="stylesheet" href="{% static 'read.css' %}">
+</head>
+
+<body>
+    <h1>Current Data</h1>
+    <!-- <ul>
+        {% for key, value in data.items %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul> -->
+    <table class="order-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key in data %}
+            <tr>
+                <td>{{key.Id}}</td>
+                <td>{{key.Name}}</td>
+                <td>{{key.Email}}</td>
+                <td>{{key.Age}}</td>
+                <td>{{key.City}}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="pages">
+        <a href="/create">Add Data</a>
+        <a href="/update">Update Data</a>
+        <a href="/delete">Delete Data</a>
+    </div>
+</body>
+
+</html>
